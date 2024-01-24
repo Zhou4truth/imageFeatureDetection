@@ -1,16 +1,14 @@
 \documentclass{article}
+\usepackage{graphicx} % Required for inserting images
 
 \usepackage{tabularx}
 \usepackage{booktabs}
 
-\title{Problem Statement and Goals\\\progname}
+\title{Problem Statement and Goals\\\ Image Features Detection System}
 
-\author{\authname}
+\author{Gaofeng Zhou}
 
 \date{}
-
-\input{../Comments}
-\input{../Common}
 
 \begin{document}
 
@@ -22,35 +20,68 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
+January 24, 2024 & Gaofeng Zhou & First Version\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.}
-\wss{You can change the section headings, as long as you include the required information.}
-
 \subsection{Problem}
+
+In the area of computer vision with image processing, before we do 3d reconstruction using 2d images which are captured from different angles by the same camera or by different cameras which are installed in different positions, the first step is to determine which feature will be used to do the image matching or registration considering different merits of image
+features.\\
+To make this step much easier to recognize these features visually, we decided to develop this software to do the detection of typical features of images such as edge, corner points, contour, gradients and SIFT descriptor points.\\
+
 
 \subsection{Inputs and Outputs}
 
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
+The inputs of this software should be two different images with which it would be better with overlapped area or captured from adjacent positions. These images should be captured through optical sensors with RGB formats such as JPEG, PNG, BMP, TIFF.\\
+The outputs of this software should be corresponding display of these image features in an interface screen with different buttons which are used as indicators of different detection methods or operations to corresponding image features as shown bellow.\\
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{UI draft.jpg}
+  \caption{Draft design of UI Interface}
+  \label{fig:image1}
+\end{figure}
+
+
 
 \subsection{Stakeholders}
+Core developer: Gaofeng Zhou\\
+Instructor: Dr.Spencer.Smith\\
+Co-worker:TBD\\
+
 
 \subsection{Environment}
 
-\wss{Hardware and software}
+\subsubsection{Hardware}
+
+Dell G15 series Laptop\\
+Cameras or Cellphone for image capturing\\
+
+\subsubsection{Software}
+
+Python for coding\\
+OpenCV library for image processing\\
+Qt platform for software integration\\
+MATLAB for algorithm verification\\
 
 \section{Goals}
 
+Generally, Our goals to develop this software system is to provide a preliminary sensation about the 2d image features before using them to do 3d image reconstruction.\\
+So, there are several concrete goals we should make it clear is that:
+Firstly, this software system should be able to process different images robustly and accurately, which means the input module should be working very stable, and the recalls of algorithms in OpenCV library to do image processing should be very smooth and the output module should be agile enough to produce corresponding results according to those feature detection buttons.\\
+Secondly, this software should be able to be installed in different computers with Windows Operating System, which could make the distribution much easier.\\
+At last, the cost spent in developing this software should be kept in a low level which means no time and extra labor waste on the development. The simpler, the better. No rendering or delicate UI design, just for practical application.
+
+
 \section{Stretch Goals}
+
+If possible, after this software system was developed with all those functions as mentioned above, the 3d image reconstruction could be put into consideration for further development.\\
+
 
 \end{document}
